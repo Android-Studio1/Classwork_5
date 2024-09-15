@@ -1,5 +1,6 @@
 package com.example.sharingdatainexplicitintents;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -23,5 +24,12 @@ public class SecondActivity extends AppCompatActivity {
         });
 
         TextView textView = findViewById(R.id.textView);
+
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
+        String name = b.getString("name");
+
+        textView.setText("Hello " + name + " !!");
     }
 }

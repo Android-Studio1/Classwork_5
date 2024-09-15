@@ -33,14 +33,34 @@ public class MainActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//
+//                Bundle b = new Bundle();
+//                b.putString("name", nameEditText.getText().toString());
+//                intent.putExtras(b);
+//
+//                startActivity(intent);
 
-                Bundle b = new Bundle();
-                b.putString("name", nameEditText.getText().toString());
-                intent.putExtras(b);
 
-                startActivity(intent);
+//                passDataFirstMethod();
+                passDataSecondMethod();
             }
         });
+    }
+
+    private  void passDataFirstMethod(){
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+
+        Bundle b = new Bundle();
+        b.putString("name", nameEditText.getText().toString());
+        intent.putExtras(b);
+
+        startActivity(intent);
+    }
+
+    private void passDataSecondMethod(){
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        intent.putExtra("name", nameEditText.getText().toString());
+        startActivity(intent);
     }
 }
